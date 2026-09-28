@@ -10,7 +10,7 @@ import urllib.error
 import urllib.request
 
 CABIN_ID = 101059
-FROM, TO = "2027-03-24", "2027-03-28"
+FROM, TO = "2027-03-25", "2027-03-28"
 ADULTS = 5
 API = f"https://hyttebestilling.dnt.no/api/booking/available-price?cabinId={CABIN_ID}&fromDate={FROM}&toDate={TO}"
 BOOK_URL = f"https://hyttebestilling.dnt.no/hytte/{CABIN_ID}?fromDate={FROM}&toDate={TO}&adults={ADULTS}&numberOfGuests={ADULTS}"
@@ -48,7 +48,7 @@ def main():
         print("Stengt:", err)
     elif "data" in data:
         print("ÅPEN!")
-        ntfy("Leirvassbu påske: booking er åpen!", "24.–28. mars, 5 voksne. Trykk for å bestille nå.")
+        ntfy("Leirvassbu påske: booking er åpen!", "25.–28. mars, 5 voksne. Trykk for å bestille nå.")
     else:
         print("Endret svar:", err or body[:200])
         ntfy("Leirvassbu: bookingstatus endret", f"{err or 'Nytt svar fra DNT'}. Sjekk nå.")
