@@ -48,7 +48,7 @@ def main():
         print("Stengt:", err)
     elif "data" in data:
         print("ÅPEN!")
-        ntfy("Leirvassbu påske: booking er åpen!", "25.–28. mars, 5 voksne. Trykk for å bestille nå.")
+        ntfy("Leirvassbu påske: booking er åpen!", "24.–28. mars, 5 voksne. Trykk for å bestille nå.")
     else:
         print("Endret svar:", err or body[:200])
         ntfy("Leirvassbu: bookingstatus endret", f"{err or 'Nytt svar fra DNT'}. Sjekk nå.")
